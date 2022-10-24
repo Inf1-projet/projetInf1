@@ -1,0 +1,19 @@
+.header{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #8A8479;
+    display: flex;
+    justify-content: center;
+}
+
+li{
+    list-style-type: none;
+    display: inline;
+}
+
+ul{
+    padding-left: 0px;
+    min-width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
