@@ -1,18 +1,19 @@
 import './header.css'
 import Logo from '../Logo/Logo';
+import { Link } from 'react-router-dom';
 
-const Header = ({logo}) => {
+const Header = () => {
     return (
-            <nav
-            className='header'
-            >
-            <ul>
-                <li>Page 1</li>
-                <li><Logo logo={logo}></Logo></li>
-                <li>Page 3</li>
-            </ul>
-            </nav>
-    );
+        <nav
+        className='header'
+        >
+        <ul>
+            <li><Link to="/home" className='link'>Home</Link></li>
+            <li><Logo logo="logo"></Logo></li>  
+            <li><Link to="/game" className='link'>Flags Game</Link></li>
+        </ul>
+        </nav>  );
+
 }
 
 export default Header;
