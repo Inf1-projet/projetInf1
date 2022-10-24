@@ -2,7 +2,7 @@ import './text.css'
 
 const Text = ({ children, bold = false}) => {
     return (
-        <p  
+        <p 
     
           style={ bold ? {fontWeight: 'bold'} : {}}>
             {children}

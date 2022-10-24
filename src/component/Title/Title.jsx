@@ -2,7 +2,7 @@ import './title.css'
 
 const Title = ({ children, size = 'small'})=>{
     return(
-        <p
+        <p 
             className={`${size}`}
         >
             {children}
