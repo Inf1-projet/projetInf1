@@ -11,5 +11,5 @@ const Template = (args) => <Input {...args} />
 export  const Default = Template.bind({});
 
 Default.args = {
-    placeholder : "Entrez un pays",
+    placeholder : "Entrez un pokemon",
 }

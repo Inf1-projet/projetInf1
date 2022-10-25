@@ -2,12 +2,14 @@ import React from 'react';
 import './style.css'
 
 const Input = ({
- placeholder = "Entrez un pays",
+ placeholder = "Entrez un pokemon !",
+ onChange,
+ value
     
 }) => {
 
     return (
-        <input type="text" name="country" id='country' className='input' placeholder= {placeholder}>  
+        <input type="text" className='input' placeholder= {placeholder} onChange={onChange} value={value}>  
             </input>
            
     )

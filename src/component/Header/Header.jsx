@@ -9,7 +9,7 @@ const Header = () => {
         >
         <ul>
             <li><Link to="/home" className='link'>Home</Link></li>
-            <li><Logo logo="logo"></Logo></li>  
+            <li><Logo logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/800px-Pokebola-pokeball-png-0.png"></Logo></li>  
             <li><Link to="/game" className='link'>Flags Game</Link></li>
         </ul>
         </nav>  );

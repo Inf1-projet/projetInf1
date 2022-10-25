@@ -10,19 +10,32 @@ import Text from "../component/Text/Text";
   
     const [pokemonImage, setPokemonImage] = useState([]);
     const [pokemonName, setPokemonName] = useState([]);
+    const [input, setInput] = useState([]);
 
     const [score, setScore] = useState(0);;
+    
+    const pokemonNameSubmited = function (e) {
+      console.log(input);
+      if(input.toLowerCase() === pokemonName){
+        score = score + 1;
+      }
+      console.log(score);
+      e.preventDefault();
+
+    }
+
     
 
     const fetchPokemons = async () => {
       const randomNumber = Math.floor(Math.random() * 160);
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomNumber}`);
-      const pokemonImage = await response.json();  
-      setPokemonImage(pokemonImage.sprites.front_default);
-      setPokemonName(pokemonImage.name);
+      const pokemon = await response.json();  
+      setPokemonImage(pokemon.sprites.front_default);
+      setPokemonName(pokemon.name);
   
     }
-    
+
+ 
     useEffect(() => {
       fetchPokemons();
     }, [])
@@ -36,8 +49,11 @@ import Text from "../component/Text/Text";
               <Text children={score} className="score"></Text>
               </div>
               <div className="pokemon">
+                <form onSubmit={pokemonNameSubmited}>
                 <Image taille="large" image={pokemonImage}/>
-                <Layout textButton="Submit" labelInput="Guess the pokemon"></Layout>
+                <Text children={pokemonName}></Text>
+                <Layout buttonName="Submit"   labelInput="Guess the pokemon" value={input} onChange={(e) => setInput(e.target.value)}></Layout>
+                </form>
               </div>
             </div>
           </>
@@ -45,4 +61,3 @@ import Text from "../component/Text/Text";
     }
   
   export default Game;
-  

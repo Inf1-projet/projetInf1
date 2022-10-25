@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
 import './style.css';
 
 const Button = ({ 
-    text = 'Button',
+    textButton,
     
     onCLick,
     type = "b-p3",
@@ -12,7 +11,7 @@ const Button = ({
             <button
             onClick={() => console.log("clique !")}
             className={`${type}`}
-        >{text}
+        >{textButton}
         </button>
         
     )

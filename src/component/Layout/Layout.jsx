@@ -4,18 +4,19 @@ import Button from '../Button/Button';
 import './style.css';
 
 const Layout =({
-    textButton,
-    labelInput
+    buttonName,
+    labelInput,
+    value,
+    onChange
 }) =>{
 
-    const[clicked, onChange] = useState(false);
-
+    const[clicked, onClick] = useState(false);
 
     return (
         <>
         <div className='layout'>
-        <Input placeholder={labelInput}></Input>
-        <Button disabled={clicked} >{textButton}</Button>
+        <Input placeholder={labelInput} value={value} onChange={onChange}></Input>
+        <Button disabled={clicked} textButton={buttonName}></Button>
         </div>
         </>
     );
