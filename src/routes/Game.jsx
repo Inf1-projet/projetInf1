@@ -5,26 +5,29 @@ import Header from "../component/Header/Header";
 import './game.css'
 import Layout from "../component/Layout/Layout";
 import Text from "../component/Text/Text";
+import {reactLocalStorage} from 'reactjs-localstorage';
 
   function Game() {
-  
     const [pokemonImage, setPokemonImage] = useState([]);
     const [pokemonName, setPokemonName] = useState([]);
     const [input, setInput] = useState([]);
-
-    const [score, setScore] = useState(0);;
+    const [score , setScore] = useState(reactLocalStorage.get("score"));
     
-    const pokemonNameSubmited = function (e) {
-      console.log(input);
-      if(input.toLowerCase() === pokemonName){
-        score = score + 1;
-      }
-      console.log(score);
-      e.preventDefault();
-
+    if(reactLocalStorage.get("score") == null){
+      reactLocalStorage.set("score", 0);
     }
 
-    
+    const pokemonNameSubmited = function (e) {
+        if(input === pokemonName){
+          const temp = reactLocalStorage.get("score");
+          reactLocalStorage.set("score", Number(temp)+1);
+          setScore(reactLocalStorage.get("score"));
+        }
+        setInput();
+        fetchPokemons();
+        e.preventDefault();
+
+    }
 
     const fetchPokemons = async () => {
       const randomNumber = Math.floor(Math.random() * 160);
