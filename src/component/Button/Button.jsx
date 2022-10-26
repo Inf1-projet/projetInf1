@@ -2,14 +2,15 @@ import './style.css';
 
 const Button = ({ 
     textButton,
-    
-    onCLick,
+    onClick,
+    buttonType,
     type = "b-p3",
 }) => {
     
     return (
             <button
-            onClick={() => console.log("clique !")}
+            type={buttonType}
+            onClick={onClick}
             className={`${type}`}
         >{textButton}
         </button>

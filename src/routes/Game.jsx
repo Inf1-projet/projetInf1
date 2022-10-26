@@ -7,7 +7,16 @@ import Layout from "../component/Layout/Layout";
 import Text from "../component/Text/Text";
 import {reactLocalStorage} from 'reactjs-localstorage';
 
-  function Game() {
+function resetScore(){
+  reactLocalStorage.set("score", 0);
+  document.location.reload(true);
+}
+
+function showResponse(){
+  document.getElementById("pokemonName").style.display = "block";
+}
+
+function Game() {
     const [pokemonImage, setPokemonImage] = useState([]);
     const [pokemonName, setPokemonName] = useState([]);
     const [input, setInput] = useState([]);
@@ -23,6 +32,7 @@ import {reactLocalStorage} from 'reactjs-localstorage';
           reactLocalStorage.set("score", Number(temp)+1);
           setScore(reactLocalStorage.get("score"));
         }
+        input.reset();
         setInput();
         fetchPokemons();
         e.preventDefault();
@@ -43,19 +53,30 @@ import {reactLocalStorage} from 'reactjs-localstorage';
       fetchPokemons();
     }, [])
     
+
     return (
           <>
             <Header />
             <div className="body">
               <div className="top-body">
-              <Title children="Who's that Pokemon !" size="large"></Title>
-              <Text children={score} className="score"></Text>
+              <Title children="Who's that Pokemon ?" size="large"></Title>
+              <Text children={score} className="score" hidden="none"></Text>
               </div>
               <div className="pokemon">
                 <form onSubmit={pokemonNameSubmited}>
                 <Image taille="large" image={pokemonImage}/>
-                <Text children={pokemonName}></Text>
-                <Layout buttonName="Submit"   labelInput="Guess the pokemon" value={input} onChange={(e) => setInput(e.target.value)}></Layout>
+                <Text children={pokemonName} id="pokemonName" className="hidden"></Text>
+                <Layout 
+                        showResponseText="Show"
+                        showResponseButton={() =>showResponse()}
+                        submitButtonText="Submit" 
+                        resetButtonText="Reset" 
+                        resetButton={()=> resetScore()} 
+                        labelInput="Guess the pokemon" 
+                        value={input} 
+                        onChange={(e) => setInput(e.target.value)}
+                        >  
+                </Layout>
                 </form>
               </div>
             </div>
