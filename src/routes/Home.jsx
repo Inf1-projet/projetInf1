@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Card1 from "../component/Card1/Card1";
 import Text from "../component/Text/Text";
 import './home.css';
-import { redirect } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 import Button from "../component/Button/Button";
 
 function Home() {
@@ -37,11 +37,11 @@ function Home() {
  // console.log(pokemonName);
  //   console.log(pokemonImage);
 
-     listPokemon = listPoke.map(poke => ({
+     listPokemon = listPoke.map((poke) => (
+      {
       nom : `${poke.name}`,
       image : `${poke.sprites.front_default}`,
-      id : `${poke.id}`
-      
+      id : `${poke.id}`,
     })) ;
 
     setpokemonList(listPokemon);
@@ -59,29 +59,18 @@ function Home() {
       <>
       <Header/>
 
-      { pokemonList.length > 0 &&
-        pokemonList.map(pokemon => {
-          console.log(pokemon);
-          
-
-          
+      <div>
+        {pokemonList.length > 0 && pokemonList.map((pokemon,index) => {
           return (
-            
-               <div
-                
-               >
-              <Card1 image={pokemon.image} ></Card1>
-              <Text children={pokemon.nom}></Text>
-              <button onClick={() => redirect("/detail/")}>ici</button>
-            <button onClick={() => console.log("test")}>test</button>
-            </div>
-            
-           
-          )
-        })
-
+               <div key={index}>
+                <Card1 image={pokemon.image} ></Card1>
+                <Text children={pokemon.nom}></Text>
+                <Link to={`/detail/${pokemon.id}`}>Here</Link>
+              </div>     
+          );
+        })}
       
-    }
+    </div>
       </>
 
 

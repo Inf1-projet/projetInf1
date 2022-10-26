@@ -13,15 +13,15 @@ const Card2 = ({
 }) => {
     return (
 
-        <div class='container'>
-        <div class="card2">
-            <div class="top-container">
+        <div className='container'>
+        <div className="card2">
+            <div className="top-container">
                 <Title children={nom} size="medium"></Title>
                 <Text children={poids}></Text>
             </div>
             
             <Image taille="large" image={image}></Image>
-            <div class="bottom-container">
+            <div className="bottom-container">
                 <Text children={type}></Text>
                 <Text children={abilite}></Text>
             </div>

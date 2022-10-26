@@ -6,7 +6,7 @@ const Card1 = ({
 }) => {
     return (
 
-        <section class="card1">
+        <section className="card1">
             <Image taille="small" image={image}></Image>
         </section>
     )

@@ -6,7 +6,7 @@ const Image = ({
 }) => {
     return (
 
-        <img src={image} class={taille} alt="image">
+        <img src={image} className={taille} alt="image">
         
         </img>
     )
