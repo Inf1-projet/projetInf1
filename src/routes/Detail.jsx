@@ -1,8 +1,8 @@
 import Header from "../component/Header/Header";
 import { useEffect, useState } from "react";
-import Card1 from "../component/Card1/Card1";
+import Card2 from "../component/Card2/Card2";
 import Text from "../component/Text/Text";
-import './home.css';
+import './detail.css';
 
 function Detail() {
 
@@ -22,10 +22,15 @@ function Detail() {
     setPokemonImage(pokemon.sprites.front_default);
     setPokemonName(pokemon.name);
     setPokemonPoids(pokemon.weight);
-    setPokemonType(pokemon.types);
-    setPokemonAbilite(pokemon.abilites  )
+    setPokemonType(pokemon.types.map(type =>({
+        types : `${type.type.name}`,
+    })));
+    setPokemonAbilite(pokemon.abilites.map(abilite =>({
+        abilites : `${abilite.ability.name}`,
+    })));
+
+  
   }
- 
   useEffect(() => {
     fetchDetail();
   }, [])
@@ -36,7 +41,10 @@ function Detail() {
       <>
       <Header/>
      
-
+      <div>
+               <Card2 image={pokemonImage} nom={pokemonName} type={pokemonType} abilite={pokemonAbilite} poids={pokemonPoids}></Card2>
+            
+             </div>  
       
     
       </>
