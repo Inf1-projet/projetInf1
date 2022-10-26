@@ -4,6 +4,7 @@ import Home from './routes/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { render } from 'react-dom';
 import Game from './routes/Game';
+import Detail from './routes/Detail';
 import Header from './component/Header/Header';
 
 const rootElement = document.getElementById("root");
@@ -11,6 +12,7 @@ render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Header />} />
+      <Route path="/detail/:id" element={<Detail />} />
       <Route path="/home" element={<Home />} />
       <Route path='/game' element={<Game />} />
     </Routes>

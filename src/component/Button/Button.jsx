@@ -9,7 +9,7 @@ const Button = ({
     
     return (
             <button
-            onClick={() => console.log("clique !")}
+            onClick={onCLick}
             className={`${type}`}
         >{textButton}
         </button>

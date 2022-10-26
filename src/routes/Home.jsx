@@ -2,13 +2,18 @@ import Header from "../component/Header/Header";
 import { useEffect, useState } from "react";
 import Card1 from "../component/Card1/Card1";
 import Text from "../component/Text/Text";
+import './home.css';
+import { redirect } from "react-router-dom";
+import Button from "../component/Button/Button";
 
 function Home() {
 
 
- // const [pokemonList, setpokemonList] = useState([]);
-  const [pokemonImage, setPokemonImage] = useState([]);
-    const [pokemonName, setPokemonName] = useState([]);
+ const [pokemonList, setpokemonList] = useState([]);
+
+  const pokemonImage= [];
+    const pokemonName = [];
+    let listPokemon = [];
 
   const fetchPokemons = async () => {
     
@@ -19,36 +24,72 @@ function Home() {
     for(var i=0 ; i<res.length ; i++){
       const response_2 = await fetch(`${res[i].url}`);
       const result = await response_2.json();
+
       listPoke.push(result);
-    
-    
-      setPokemonImage(listPoke.sprites.front_default);
-      setPokemonName(listPoke.name);
+   
+      pokemonName.push(listPoke[i].name);
+      pokemonImage.push(listPoke[i].sprites.front_default);
+      
     }
-
-    console.log(listPoke);
- 
     
 
+   console.log(listPoke);
+ // console.log(pokemonName);
+ //   console.log(pokemonImage);
+
+     listPokemon = listPoke.map(poke => ({
+      nom : `${poke.name}`,
+      image : `${poke.sprites.front_default}`,
+      id : `${poke.id}`
+      
+    })) ;
+
+    setpokemonList(listPokemon);
+  
   }
 
-  
+ 
   useEffect(() => {
     fetchPokemons();
   }, [])
 
+  
   return (
-    <>
-    <Header />
-    array.forEach(e =&gt; {
-      <div>
-        <Card1 image ={pokemonImage}></Card1>
-        <Text children={pokemonName}></Text>
-      </div>
-    });
-    </>
+    
+      <>
+      <Header/>
+
+      { pokemonList.length > 0 &&
+        pokemonList.map(pokemon => {
+          console.log(pokemon);
+          
+
+          
+          return (
+            
+               <div
+                
+               >
+              <Card1 image={pokemon.image} ></Card1>
+              <Text children={pokemon.nom}></Text>
+              <button onClick={() => redirect("/detail/")}>ici</button>
+            <button onClick={() => console.log("test")}>test</button>
+            </div>
+            
+           
+          )
+        })
+
+      
+    }
+      </>
+
+
+    
+   
     
     
+   
     
   );
 }
