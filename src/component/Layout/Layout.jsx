@@ -4,10 +4,16 @@ import Button from '../Button/Button';
 import './style.css';
 
 const Layout =({
-    buttonName,
+    showResponseText,
+    showResponseButton,
+    submitButtonText,
+    resetButtonText,
+    resetButton,
     labelInput,
     value,
-    onChange
+    onChange,
+    id,
+    
 }) =>{
 
     const[clicked, onClick] = useState(false);
@@ -15,8 +21,10 @@ const Layout =({
     return (
         <>
         <div className='layout'>
-        <Input placeholder={labelInput} value={value} onChange={onChange}></Input>
-        <Button disabled={clicked} textButton={buttonName}></Button>
+        <Button disabled={clicked} textButton={showResponseText} onClick={showResponseButton} buttonType="button"></Button>
+        <Input id={id} placeholder={labelInput} value={value} onChange={onChange}></Input>
+        <Button disabled={clicked} textButton={submitButtonText} ></Button>
+        <Button disabled={clicked} textButton={resetButtonText} onClick={resetButton}></Button>
         </div>
         </>
     );

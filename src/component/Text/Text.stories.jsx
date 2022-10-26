@@ -20,4 +20,13 @@ export const ChildrenBold = Template.bind({});
 ChildrenBold.args = {
     children: 'Titre du composant',
     bold: true,
+    hidden: null
+}
+
+export const ChildrenHidden = Template.bind({});
+
+ChildrenHidden.args = {
+    children: 'Titre du composant',
+    bold: false,
+    hidden: "hidden"
 }

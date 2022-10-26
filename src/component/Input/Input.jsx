@@ -4,12 +4,14 @@ import './style.css'
 const Input = ({
  placeholder = "Entrez un pokemon !",
  onChange,
- value
+ value,
+ id,
+ name
     
 }) => {
 
     return (
-        <input type="text" className='input' placeholder= {placeholder} onChange={onChange} value={value}>  
+        <input type="text" className='input' id={id} name={id} placeholder= {placeholder} onChange={onChange} value={value}>  
             </input>
            
     )

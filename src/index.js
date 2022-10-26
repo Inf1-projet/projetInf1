@@ -11,9 +11,9 @@ const rootElement = document.getElementById("root");
 render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Header />} />
+
       <Route path="/detail/:id" element={<Detail />} />
-      <Route path="/home" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path='/game' element={<Game />} />
     </Routes>
   </BrowserRouter>,
