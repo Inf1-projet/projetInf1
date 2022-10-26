@@ -1,12 +1,14 @@
 import Header from "../component/Header/Header";
 import { useEffect, useState } from "react";
 import Card2 from "../component/Card2/Card2";
-import Text from "../component/Text/Text";
+import { useParams } from "react-router-dom";
 import './detail.css';
 
 function Detail() {
 
+  const params = useParams();
 
+  console.log(params);
 
     const [pokemonImage, setPokemonImage] = useState([]);
     const [pokemonName, setPokemonName] = useState([]);
@@ -16,7 +18,7 @@ function Detail() {
 
   const fetchDetail = async () => {
     
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${params.id}`);
     const pokemon = await response.json();
 
     setPokemonImage(pokemon.sprites.front_default);
@@ -42,9 +44,13 @@ function Detail() {
       <Header/>
      
       <div>
-               <Card2 image={pokemonImage} nom={pokemonName} type={pokemonType} abilite={pokemonAbilite} poids={pokemonPoids}></Card2>
-            
-             </div>  
+          <Card2
+           image={pokemonImage} 
+          nom={pokemonName} 
+         // type={pokemonType} 
+         // abilite={pokemonAbilite} 
+          poids={pokemonPoids}></Card2>        
+      </div>  
       
     
       </>
