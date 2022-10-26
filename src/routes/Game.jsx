@@ -14,6 +14,7 @@ function resetScore(){
 
 function showResponse(){
   document.getElementById("pokemonName").style.display = "block";
+  document.getElementById("input").disabled=true;
 }
 
 function Game() {
@@ -75,6 +76,7 @@ function Game() {
                         labelInput="Guess the pokemon" 
                         value={input} 
                         onChange={(e) => setInput(e.target.value)}
+                        id="input"
                         >  
                 </Layout>
                 </form>
