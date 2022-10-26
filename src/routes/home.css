@@ -1,4 +1,27 @@
-div section{
+.main-div {
+    display: flex;
+    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 3%;
     margin-top: 30px;
+
+}
+
+.div-card1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.false{
+    text-align: center;
+    margin: 0 0;
+}
+
+.card1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 

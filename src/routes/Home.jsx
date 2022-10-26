@@ -17,7 +17,7 @@ function Home() {
 
   const fetchPokemons = async () => {
     
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=30`);
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=40`);
     const pokemons = await response.json();
     const res = pokemons.results;
     const listPoke = []
@@ -55,42 +55,26 @@ function Home() {
 
   
   return (
-    
       <>
       <Header/>
+      <div class="main-div" >
 
-      { pokemonList.length > 0 &&
-        pokemonList.map(pokemon => {
+      { pokemonList.length > 0 && pokemonList.map(pokemon => {
           console.log(pokemon);
-          
-
-          
           return (
-            
-               <div
-                
-               >
-              <Card1 image={pokemon.image} ></Card1>
-              <Text children={pokemon.nom}></Text>
-              <button onClick={() => redirect("/detail/")}>ici</button>
-            <button onClick={() => console.log("test")}>test</button>
-            </div>
-            
-           
+            <>
+              <div class="div-card1"> 
+                <Card1 image={pokemon.image} ></Card1>
+                <Text children={pokemon.nom} hidden="false"></Text>
+                <button onClick={() => redirect("/detail/")}>ici</button>
+                <button onClick={() => console.log("test")}>test</button>
+              </div>
+            </>
           )
         })
-
-      
     }
+    </div>
       </>
-
-
-    
-   
-    
-    
-   
-    
   );
 }
 
