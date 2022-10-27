@@ -53,7 +53,7 @@ function Detail() {
          // abilite={pokemonAbilite} 
           poids={pokemonPoids}></Card2>        
       </div>  
-      <Footer link2="https://pokeapi.co" name2="Pokemon API" previous="true" onCLick={() => navigate(`/home`)}></Footer>    
+      <Footer link="https://pokeapi.co" name="Pokemon API" previous="true" onCLick={() => navigate(`/home`)}></Footer>    
       </>
 
 
