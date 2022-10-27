@@ -17,6 +17,7 @@ function showResponse(){
   document.getElementById("input").disabled=true;
   document.getElementById("input").placeholder="FF15, go Next";
 
+
 }
 
 function Game() {
@@ -43,7 +44,7 @@ function Game() {
     }
 
     const fetchPokemons = async () => {
-      const randomNumber = Math.floor(Math.random() * 160);
+      const randomNumber = Math.floor(Math.random() * 150);
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomNumber}`);
       const pokemon = await response.json();  
       setPokemonImage(pokemon.sprites.front_default);
