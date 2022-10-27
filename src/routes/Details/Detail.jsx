@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Header from "../../component/Header/Header";
 import { useEffect, useState } from "react";
 import Card2 from "../../component/Card2/Card2";
@@ -11,17 +12,14 @@ import { useNavigate } from "react-router-dom";
 function Detail() {
 
   const navigate = useNavigate();
-
   const params = useParams();
 
-  console.log(params);
 
   const [pokemonImage, setPokemonImage] = useState([]);
   const [pokemonName, setPokemonName] = useState([]);
   const [pokemonType, setPokemonType] = useState([]);
   const [pokemonPoids, setPokemonPoids] = useState([]);
   const [pokemonTaille, setPokemonTaille] = useState([]);
-
   const [pokemonAbilite, setPokemonAbilite] = useState([]);
 
   let typePoke = [];
@@ -37,7 +35,7 @@ function Detail() {
     setPokemonTaille(pokemon.height);
     setPokemonPoids(pokemon.weight);
 
-    console.log(pokemon);
+
     typePoke = pokemon.types.map((index) => ({
       type: `${index.type.name}`
     }));
@@ -48,6 +46,7 @@ function Detail() {
     }));
     setPokemonAbilite(abilitesPoke);
   }
+
   useEffect(() => {
     fetchDetail();
 
@@ -55,12 +54,9 @@ function Detail() {
 
 
   return (
-
     <>
       <Header />
-
       <div>
-
         <Card2
           image={pokemonImage}
           nom={pokemonName}
@@ -69,25 +65,14 @@ function Detail() {
             return (` ${pokemon.type}`);
           })}`}
 
-
           abilite={"Abilities : " + `${pokemonAbilite.map((pokemon) => {
             return (` ${pokemon.ability}`);
           })}`}
           poids={"Weight : " + pokemonPoids + " lbs"}>
         </Card2>
       </div>
-
-
       <Footer link="https://pokeapi.co" name="Link to the Pokemon API" onClick={() => navigate("/")}></Footer>
     </>
-
-
-
-
-
-
-
-
   );
 
 }
