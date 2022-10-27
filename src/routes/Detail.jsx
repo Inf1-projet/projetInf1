@@ -53,8 +53,7 @@ function Detail() {
          // abilite={pokemonAbilite} 
           poids={pokemonPoids}></Card2>        
       </div>  
-      <Footer link1={pokemonAbilite} link2={pokemonAbilite} name2={pokemonAbilite} previous="true" onCLick={() => navigate(`/home`)}></Footer>
-      
+    
     
       </>
 

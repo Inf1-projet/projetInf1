@@ -3,10 +3,11 @@
     max-width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-left: 3%;
+    margin-left: 5%;
     margin-top: 30px;
-}
+    
 
+}
 
 div{
     margin-bottom: 10px;
