@@ -49,9 +49,7 @@ function Home() {
     setpokemonList(listPokemon);
   
   }
-  const navigateToPokemonDetail = (id) => {
-    navigate(`/detail/${id}`);
-  };
+
 
 
  
@@ -69,7 +67,7 @@ function Home() {
         {pokemonList.length > 0 && pokemonList.map((pokemon,index) => {
           return (
                <div key={index}>
-                <Card1 image={pokemon.image} onClick={() => navigateToPokemonDetail(pokemon.id)}></Card1>
+                <Card1 image={pokemon.image} onClick={() => navigate(`/detail/${pokemon.id}`)}></Card1>
                 <Link to={`/detail/${pokemon.id}`}>
                 <Text children={pokemon.nom} hidden="none"></Text>
                 </Link>
