@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Card2 from "../component/Card2/Card2";
 import { useParams } from "react-router-dom";
 import './detail.css';
+import Footer from "../component/Footer/Footer";
+
 
 function Detail() {
 
@@ -21,18 +23,14 @@ function Detail() {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${params.id}`);
     const pokemon = await response.json();
 
-    console.log(pokemon);
-
     setPokemonImage(pokemon.sprites.front_default);
     setPokemonName(pokemon.name);
     setPokemonPoids(pokemon.weight);
-    setPokemonType(pokemon.types.map(types =>({
-        types : `${types.type.name}`,
+    setPokemonType(pokemon.types.map(type =>({
+        types : `${type.type.name}`,
     })));
-
-
-    setPokemonAbilite(pokemon.abilites.map((abilite,index) =>({
-        abilites : `${abilite[index].ability.name}`,
+    setPokemonAbilite(pokemon.abilites.map(abilite =>({
+        abilites : `${abilite.ability.name}`,
     })));
 
   
@@ -41,7 +39,6 @@ function Detail() {
     fetchDetail();
   }, [])
 
-  
   
   return (
     
@@ -56,6 +53,7 @@ function Detail() {
          // abilite={pokemonAbilite} 
           poids={pokemonPoids}></Card2>        
       </div>  
+      <Footer link1={pokemonAbilite} link2={pokemonAbilite} name2={pokemonAbilite} previous="true" onCLick={() => navigate(`/home`)}></Footer>
       
     
       </>
