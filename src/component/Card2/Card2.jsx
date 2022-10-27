@@ -8,7 +8,8 @@ const Card2 = ({
     nom='pikachu',
     type='electrique', //ici on mettre une liste car on peu avoir plusieurs types
     taille,  //
-    poids
+    poids,
+    abilite
 
 }) => {
     return (
@@ -19,10 +20,10 @@ const Card2 = ({
                 <Title children={nom} size="medium"></Title>
                 <Text children={poids}></Text>
             </div>
-            
             <Image taille="large" image={image}></Image>
             <div className="bottom-container">
                 <Text children={type}></Text>
+                <Text children={abilite}></Text>
                 <Text children={taille}></Text>
             </div>
             
