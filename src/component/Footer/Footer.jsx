@@ -4,17 +4,16 @@ import "./footer.css";
 
 
 const Footer = ({
-    previous = true || false,
     link,
     name,
-    onCLick
+    onClick
 }) => {
     return (
 
         <footer>
             <div>
+            <Button textButton="Return home" onClick={onClick}></Button>
             <Link link={link} name={name}></Link>
-            {previous ? <Button text="Retour" onCLick={onCLick}></Button> : {}}
             </div>
         </footer>
     )

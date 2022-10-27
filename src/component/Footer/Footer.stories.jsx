@@ -12,8 +12,6 @@ export  const Default = Template.bind({});
 
 Default.args = {
     previous : true || false,
-    link1 : "oui",
-    name1 : "oui",
-    link2 : "non",
-    name2 : "non"
+    link : "oui",
+    name : "oui",
 }
