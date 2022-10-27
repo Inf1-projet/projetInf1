@@ -10,13 +10,11 @@ function Home() {
   const navigate = useNavigate();
  const [pokemonList, setpokemonList] = useState([]);
 
-  const pokemonImage= [];
-    const pokemonName = [];
     let listPokemon = [];
 
   const fetchPokemons = async () => {
     
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=40`);
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=150`);
     const pokemons = await response.json();
     const res = pokemons.results;
     const listPoke = []
@@ -25,9 +23,7 @@ function Home() {
       const result = await response_2.json();
 
       listPoke.push(result);
-   
-      pokemonName.push(listPoke[i].name);
-      pokemonImage.push(listPoke[i].sprites.front_default);
+
       
     }
     

@@ -9,13 +9,13 @@ function Detail() {
 
   const params = useParams();
 
-  console.log(params);
-
     const [pokemonImage, setPokemonImage] = useState([]);
     const [pokemonName, setPokemonName] = useState([]);
     const [pokemonType, setPokemonType] = useState([]);
     const [pokemonPoids, setPokemonPoids] = useState([]);
-    const [pokemonAbilite, setPokemonAbilite] = useState([]);
+    const [pokemonTaille, setPokemonTaille] = useState([]);
+
+    let typePoke = [];
 
   const fetchDetail = async () => {
     
@@ -24,15 +24,17 @@ function Detail() {
 
     setPokemonImage(pokemon.sprites.front_default);
     setPokemonName(pokemon.name);
+    setPokemonTaille(pokemon.height);
     setPokemonPoids(pokemon.weight);
-    setPokemonType(pokemon.types.map(type =>({
-        types : `${type.type.name}`,
-    })));
-    setPokemonAbilite(pokemon.abilites.map(abilite =>({
-        abilites : `${abilite.ability.name}`,
-    })));
 
-  
+    typePoke=pokemon.types.map((index)=>({
+      type : `${index.type.name}`
+     }) );
+    setPokemonType(typePoke);
+
+
+   console.log(pokemon);
+     console.log(pokemonTaille)
   }
   useEffect(() => {
     fetchDetail();
@@ -45,12 +47,15 @@ function Detail() {
       <Header/>
      
       <div>
+        
           <Card2
            image={pokemonImage} 
           nom={pokemonName} 
-         // type={pokemonType} 
-         // abilite={pokemonAbilite} 
-          poids={pokemonPoids}></Card2>        
+          taille={"taille : " + pokemonTaille} 
+          type={"type(s) : "+ pokemonType} 
+          poids= {"poids : " + pokemonPoids}>
+           
+            </Card2>      
       </div>  
       </>
 

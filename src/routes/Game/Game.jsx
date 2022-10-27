@@ -72,7 +72,7 @@ function Game() {
               <div className="pokemon">
                 <form onSubmit={pokemonNameSubmited}>
                 <Image taille="large" image={pokemonImage}/>
-                <Text children={pokemonName} id="pokemonName" className="hidden"></Text>
+                <Text children={pokemonName} id="pokemonName" classText="hidden"></Text>
                 <Layout 
                         showResponseText="Show"
                         showResponseButton={() =>showResponse()}

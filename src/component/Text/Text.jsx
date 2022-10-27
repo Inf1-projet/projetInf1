@@ -1,10 +1,10 @@
 import './text.css'
 
-const Text = ({ children, bold = false, id,hidden = "hidden"||null}) => {
+const Text = ({ children, bold = false, id, classText}) => {
     return (
         <p 
             id={id}
-            className={hidden}
+            className={classText}
           style={ bold ? {fontWeight: 'bold'} : {}}>
             {children}
         </p>

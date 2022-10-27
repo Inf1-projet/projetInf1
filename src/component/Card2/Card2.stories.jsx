@@ -14,7 +14,7 @@ Default.args = {
     image : "./public/logo192.png",
     nom:"Pikachu",
     type:"Electrique",
-    abilite:"Tonnerre",
+    taille:"180",
     poids:"10",
 }
 
