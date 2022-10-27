@@ -59,11 +59,22 @@ function Detail() {
            image={pokemonImage} 
           nom={pokemonName} 
           taille={"taille : " + pokemonTaille} 
-          type={"type(s) : "+ pokemonType} 
+          type={"type(s) : "+ 
+              
+      `${ pokemonType.map((pokemon) => {
+          return (
+          
+                  ` ${pokemon.type}`
+          );
+        })}`
+    
+        } 
           poids= {"poids : " + pokemonPoids}>
            
             </Card2>      
       </div>  
+
+
       <Footer link="https://pokeapi.co" name="Link to the Pokemon API" onClick={() => navigate("/")}></Footer>    
       </>
 
