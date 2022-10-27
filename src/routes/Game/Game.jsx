@@ -6,6 +6,7 @@ import './game.css'
 import Layout from "../../component/Layout/Layout";
 import Text from "../../component/Text/Text";
 import {reactLocalStorage} from 'reactjs-localstorage';
+import Button from "../../component/Button/Button";
 
 function resetScore(){
   reactLocalStorage.set("score", 0);
@@ -33,8 +34,10 @@ function Game() {
     const pokemonNameSubmited = function (e) {
         if(input === pokemonName){
           const temp = reactLocalStorage.get("score");
+          if(document.getElementById("input").disabled !==true){
           reactLocalStorage.set("score", Number(temp)+1);
           setScore(reactLocalStorage.get("score"));
+          }
         }
         input.reset();
         setInput();
@@ -74,14 +77,13 @@ function Game() {
                         showResponseText="Show"
                         showResponseButton={() =>showResponse()}
                         submitButtonText="Submit" 
-                        resetButtonText="Reset" 
-                        resetButton={()=> resetScore()} 
                         labelInput="Guess the pokemon" 
                         value={input} 
                         onChange={(e) => setInput(e.target.value)}
                         id="input"
                         >  
                 </Layout>
+                <Button textButton="Reset" onClick={()=>resetScore() } type="reset-button"></Button>
                 </form>
               </div>
             </div>
