@@ -1,7 +1,7 @@
-import Header from "../component/Header/Header";
+import Header from "../../component/Header/Header";
 import { useEffect, useState } from "react";
-import Card1 from "../component/Card1/Card1";
-import Text from "../component/Text/Text";
+import Card1 from "../../component/Card1/Card1";
+import Text from "../../component/Text/Text";
 import './home.css';
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
