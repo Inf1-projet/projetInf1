@@ -3,10 +3,12 @@ import { useEffect, useState } from "react";
 import Card1 from "../component/Card1/Card1";
 import Text from "../component/Text/Text";
 import './home.css';
-import { Link, redirect } from "react-router-dom";
-import Button from "../component/Button/Button";
-
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function Home() {
+
+
+  const navigate = useNavigate();
 
 
  const [pokemonList, setpokemonList] = useState([]);
@@ -47,6 +49,10 @@ function Home() {
     setpokemonList(listPokemon);
   
   }
+  const navigateToPokemonDetail = (id) => {
+    navigate(`/detail/${id}`);
+  };
+
 
  
   useEffect(() => {
@@ -63,9 +69,10 @@ function Home() {
         {pokemonList.length > 0 && pokemonList.map((pokemon,index) => {
           return (
                <div key={index}>
-                <Card1 image={pokemon.image} ></Card1>
-                <Text children={pokemon.nom} hidden="false"></Text>
-                <Link to={`/detail/${pokemon.id}`}>Here</Link>
+                <Card1 image={pokemon.image} onClick={() => navigateToPokemonDetail(pokemon.id)}></Card1>
+                <Link to={`/detail/${pokemon.id}`}>
+                <Text children={pokemon.nom} hidden="none"></Text>
+                </Link>
               </div>     
           );
         })}
