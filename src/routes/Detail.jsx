@@ -21,14 +21,18 @@ function Detail() {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${params.id}`);
     const pokemon = await response.json();
 
+    console.log(pokemon);
+
     setPokemonImage(pokemon.sprites.front_default);
     setPokemonName(pokemon.name);
     setPokemonPoids(pokemon.weight);
-    setPokemonType(pokemon.types.map(type =>({
-        types : `${type.type.name}`,
+    setPokemonType(pokemon.types.map(types =>({
+        types : `${types.type.name}`,
     })));
-    setPokemonAbilite(pokemon.abilites.map(abilite =>({
-        abilites : `${abilite.ability.name}`,
+
+
+    setPokemonAbilite(pokemon.abilites.map((abilite,index) =>({
+        abilites : `${abilite[index].ability.name}`,
     })));
 
   
@@ -37,6 +41,7 @@ function Detail() {
     fetchDetail();
   }, [])
 
+  
   
   return (
     
