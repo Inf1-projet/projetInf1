@@ -6,7 +6,7 @@ const Link = ({
 }) => {
     return (
 
-        <a href={link} class="link">
+        <a href={link} class="link" target="_blank">
             {name}
         </a>
     )

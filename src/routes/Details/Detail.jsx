@@ -2,12 +2,19 @@ import Header from "../../component/Header/Header";
 import { useEffect, useState } from "react";
 import Card2 from "../../component/Card2/Card2";
 import { useParams } from "react-router-dom";
+import Footer from "../../component/Footer/Footer";
 import './detail.css';
+import { useNavigate } from "react-router-dom";
+
 
 
 function Detail() {
 
+  const navigate = useNavigate();
+
   const params = useParams();
+
+  console.log(params);
 
     const [pokemonImage, setPokemonImage] = useState([]);
     const [pokemonName, setPokemonName] = useState([]);
@@ -57,6 +64,7 @@ function Detail() {
            
             </Card2>      
       </div>  
+      <Footer link="https://pokeapi.co" name="Link to the Pokemon API" onClick={() => navigate("/")}></Footer>    
       </>
 
 
