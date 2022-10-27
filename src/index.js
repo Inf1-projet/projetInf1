@@ -1,11 +1,10 @@
 import React from 'react';
 import './index.css';
-import Home from './routes/Home';
+import Home from './routes/Home/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { render } from 'react-dom';
-import Game from './routes/Game';
-import Detail from './routes/Detail';
-import Header from './component/Header/Header';
+import Game from './routes/Game/Game';
+import Detail from './routes/Details/Detail';
 
 const rootElement = document.getElementById("root");
 render(

@@ -1,10 +1,10 @@
-import Title from "../component/Title/Title"
+import Title from "../../component/Title/Title"
 import { useEffect, useState } from "react";
-import Image from "../component/Image/Image";
-import Header from "../component/Header/Header";
+import Image from "../../component/Image/Image";
+import Header from "../../component/Header/Header";
 import './game.css'
-import Layout from "../component/Layout/Layout";
-import Text from "../component/Text/Text";
+import Layout from "../../component/Layout/Layout";
+import Text from "../../component/Text/Text";
 import {reactLocalStorage} from 'reactjs-localstorage';
 
 function resetScore(){
@@ -15,6 +15,9 @@ function resetScore(){
 function showResponse(){
   document.getElementById("pokemonName").style.display = "block";
   document.getElementById("input").disabled=true;
+  document.getElementById("input").placeholder="FF15, go Next";
+
+
 }
 
 function Game() {
@@ -41,7 +44,7 @@ function Game() {
     }
 
     const fetchPokemons = async () => {
-      const randomNumber = Math.floor(Math.random() * 160);
+      const randomNumber = Math.floor(Math.random() * 150);
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomNumber}`);
       const pokemon = await response.json();  
       setPokemonImage(pokemon.sprites.front_default);
