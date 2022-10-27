@@ -16,19 +16,19 @@ function Detail() {
 
   console.log(params);
 
-    const [pokemonImage, setPokemonImage] = useState([]);
-    const [pokemonName, setPokemonName] = useState([]);
-    const [pokemonType, setPokemonType] = useState([]);
-    const [pokemonPoids, setPokemonPoids] = useState([]);
-    const [pokemonTaille, setPokemonTaille] = useState([]);
+  const [pokemonImage, setPokemonImage] = useState([]);
+  const [pokemonName, setPokemonName] = useState([]);
+  const [pokemonType, setPokemonType] = useState([]);
+  const [pokemonPoids, setPokemonPoids] = useState([]);
+  const [pokemonTaille, setPokemonTaille] = useState([]);
 
-    const [pokemonAbilite, setPokemonAbilite] = useState([]);
+  const [pokemonAbilite, setPokemonAbilite] = useState([]);
 
-    let typePoke = [];
-    let abilitesPoke = [];
+  let typePoke = [];
+  let abilitesPoke = [];
 
   const fetchDetail = async () => {
-    
+
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${params.id}`);
     const pokemon = await response.json();
 
@@ -38,52 +38,56 @@ function Detail() {
     setPokemonPoids(pokemon.weight);
 
     console.log(pokemon);
-    typePoke=pokemon.types.map((index)=>({
-      type : `${index.type.name}`
-     }) );
+    typePoke = pokemon.types.map((index) => ({
+      type: `${index.type.name}`
+    }));
     setPokemonType(typePoke);
 
-    abilitesPoke=pokemon.abilities.map(index => ({
-      ability : `${index.ability.name}`
+    abilitesPoke = pokemon.abilities.map(index => ({
+      ability: `${index.ability.name}`
     }));
     setPokemonAbilite(abilitesPoke);
   }
   useEffect(() => {
     fetchDetail();
+
   }, [])
 
-  
+
   return (
-    
-      <>
-      <Header/>
-     
+
+    <>
+      <Header />
+
       <div>
-        
-          <Card2
-           image={pokemonImage} 
-          nom={pokemonName} 
-          taille={"taille : " + pokemonTaille} 
-          type={"type(s) : "+`${ pokemonType.map((pokemon) => {
-                              return (` ${pokemon.type}`);})}`}
 
-          abilite={"Abilitée(s) : "+`${ pokemonAbilite.map((pokemon) => {
-            return (` ${pokemon.ability}`);})}`}
-          poids= {"poids : " + pokemonPoids}>
-            </Card2>      
-      </div>  
+        <Card2
+          image={pokemonImage}
+          nom={pokemonName}
+          taille={"Height : " + pokemonTaille}
+          type={"type(s) : " + `${pokemonType.map((pokemon) => {
+            return (` ${pokemon.type}`);
+          })}`}
 
 
-      <Footer link="https://pokeapi.co" name="Link to the Pokemon API" onClick={() => navigate("/")}></Footer>    
-      </>
+          abilite={"Abilities : " + `${pokemonAbilite.map((pokemon) => {
+            return (` ${pokemon.ability}`);
+          })}`}
+          poids={"Weight : " + pokemonPoids + " lbs"}>
+        </Card2>
+      </div>
 
 
-    
-   
-    
-    
-   
-    
+      <Footer link="https://pokeapi.co" name="Link to the Pokemon API" onClick={() => navigate("/")}></Footer>
+    </>
+
+
+
+
+
+
+
+
   );
 
 }

@@ -1,14 +1,21 @@
-.small{
+.small {
     width: 50px;
     height: 50px;
 }
 
-.medium{
+.medium {
     width: 100px;
     height: 100px;
 }
 
-.large{
+.large {
     width: 250px;
     height: 250px;
+}
+
+.detail-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }

@@ -1,22 +1,21 @@
-.small{
+.small {
     font-size: 14px;
 }
 
-.medium{
+.medium {
     font-size: 24px;
 }
 
-.large{
+.large {
     font-size: 38px;
 }
 
-.pokemon p{
+.pokemon p {
     margin-top: 0px;
 }
 
-p{
+p {
     max-height: 100px;
     min-width: 50%;
     margin-bottom: 0px;
 }
-

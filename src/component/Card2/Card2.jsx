@@ -5,8 +5,8 @@ import './styleCard2.css';
 
 const Card2 = ({
     image,
-    nom='pikachu',
-    type='electrique', //ici on mettre une liste car on peu avoir plusieurs types
+    nom = 'pikachu',
+    type = 'electrique', //ici on mettre une liste car on peu avoir plusieurs types
     taille,  //
     poids,
     abilite
@@ -15,20 +15,21 @@ const Card2 = ({
     return (
 
         <div className='container'>
-        <div className="card2">
-            <div className="top-container">
-                <Title children={nom} size="medium"></Title>
-                <Text children={poids}></Text>
+            <div className="card2">
+                <div className="top-container">
+                    <Title children={nom} size="medium"></Title>
+                </div>
+                <Image taille="detail-img" image={image}></Image>
+                <div className="bottom-container">
+                    <Text children={type}></Text>
+                    <Text children={abilite}></Text>
+                    <Text children={poids}></Text>
+                    <Text children={taille}></Text>
+
+                </div>
+
+
             </div>
-            <Image taille="large" image={image}></Image>
-            <div className="bottom-container">
-                <Text children={type}></Text>
-                <Text children={abilite}></Text>
-                <Text children={taille}></Text>
-            </div>
-            
-           
-        </div>
         </div>
     )
 }
