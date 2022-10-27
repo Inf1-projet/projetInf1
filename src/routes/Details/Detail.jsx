@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import Card2 from "../../component/Card2/Card2";
 import { useParams } from "react-router-dom";
 import './detail.css';
-import Footer from "../../component/Footer/Footer";
 
 
 function Detail() {
