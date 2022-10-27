@@ -64,7 +64,7 @@ function Home() {
           return (
                <div key={index}>
                 <Card1 image={pokemon.image} ></Card1>
-                <Text children={pokemon.nom}></Text>
+                <Text children={pokemon.nom} hidden="false"></Text>
                 <Link to={`/detail/${pokemon.id}`}>Here</Link>
               </div>     
           );
