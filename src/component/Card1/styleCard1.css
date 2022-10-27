@@ -1,7 +1,16 @@
 .card1{
-    background-color:antiquewhite;
+    background-color:rgb(181, 174, 162);
     width: 150px;
     height: 100px;
     text-align: center;
     margin: 10px;
+    border-radius: 5%;
+
 }
+.card1:hover{
+    cursor:pointer;
+}
+body{
+    background-color: rgb(214, 212, 209);
+}
+
