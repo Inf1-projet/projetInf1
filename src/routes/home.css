@@ -3,9 +3,14 @@
     max-width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-left: 3%;
-    margin-top: 15px;
+    margin-left: 5%;
+    margin-top: 30px;
+    
 
+}
+
+div{
+    margin-bottom: 10px;
 }
 
 .div-card1{
@@ -24,5 +29,35 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 0;
+  
 }
 
+.card1:hover{
+   
+    box-shadow: 0px 10px 14px -7px #6d6e6b;
+    background-color: #8A8479;
+}
+
+.sub-div a{
+    align-items: center;
+
+}
+
+.none{
+    text-align: center;
+}
+
+.sub-div a:link{
+    text-decoration: none;
+
+}
+.sub-div a:visited{
+    color: black;
+}
+.sub-div a{
+    color : black;
+}
+.sub-div a:hover{
+    color: #8A8479;
+}

@@ -7,10 +7,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 function Home() {
 
-
   const navigate = useNavigate();
-
-
  const [pokemonList, setpokemonList] = useState([]);
 
   const pokemonImage= [];
@@ -39,18 +36,16 @@ function Home() {
  // console.log(pokemonName);
  //   console.log(pokemonImage);
 
-     listPokemon = listPoke.map((poke) => (
-      {
+     listPokemon = listPoke.map(poke => ({
       nom : `${poke.name}`,
       image : `${poke.sprites.front_default}`,
-      id : `${poke.id}`,
+      id : `${poke.id}`
+      
     })) ;
 
     setpokemonList(listPokemon);
   
   }
-
-
 
  
   useEffect(() => {
@@ -59,14 +54,15 @@ function Home() {
 
   
   return (
+    
       <>
       <Header/>
       <div class="main-div" >
 
 
-        {pokemonList.length > 0 && pokemonList.map((pokemon,index) => {
+        {pokemonList.length > 0 && pokemonList.map((pokemon) => {
           return (
-               <div key={index}>
+               <div class="sub-div" >
                 <Card1 image={pokemon.image} onClick={() => navigate(`/detail/${pokemon.id}`)}></Card1>
                 <Link to={`/detail/${pokemon.id}`}>
                 <Text children={pokemon.nom} hidden="none"></Text>
