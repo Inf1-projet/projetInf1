@@ -17,27 +17,23 @@ function showResponse() {
   document.getElementById("pokemonName").style.display = "block";
   document.getElementById("input").disabled = true;
   document.getElementById("input").placeholder = "FF15, go Next";
-
-
 }
 
 function Game() {
+
   const [pokemonImage, setPokemonImage] = useState([]);
   const [pokemonName, setPokemonName] = useState([]);
   const [input, setInput] = useState([]);
   const [score, setScore] = useState(reactLocalStorage.get("score"));
 
-  if (reactLocalStorage.get("score") === null) {
-    reactLocalStorage.set("score", 0);
-  }
-
   const pokemonNameSubmited = function (e) {
+
     if (input === pokemonName) {
       const temp = reactLocalStorage.get("score");
-      if (document.getElementById("input").disabled !== true) {
-        reactLocalStorage.set("score", Number(temp) + 1);
-        setScore(reactLocalStorage.get("score"));
-      }
+        if (document.getElementById("input").disabled !== true) {
+          reactLocalStorage.set("score", Number(temp) + 1);
+          setScore(reactLocalStorage.get("score"));
+        }
     }
     input.reset();
     setInput();

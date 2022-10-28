@@ -1,16 +1,16 @@
 import Image from '../Image/Image';
-import './styleCard1.css';
+import './styleCardPokemon.css';
 
-const Card1 = ({
+const CardPokemon = ({
     image,
     onClick
 }) => {
     return (
 
-        <section className="card1" onClick={onClick}>
+        <section className="cardPokemon" onClick={onClick}>
             <Image taille="small" image={image}></Image>
         </section>
     )
 }
 
-export default Card1;
+export default CardPokemon;

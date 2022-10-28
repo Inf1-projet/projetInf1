@@ -1,9 +1,9 @@
 import Image from '../Image/Image';
 import Text from '../Text/Text';
 import Title from '../Title/Title';
-import './styleCard2.css';
+import './styleCardPokemonDetail.css';
 
-const Card2 = ({
+const CardPokemonDetail = ({
     image,
     nom = 'pikachu',
     type = 'electrique', //ici on mettre une liste car on peu avoir plusieurs types
@@ -15,7 +15,7 @@ const Card2 = ({
     return (
 
         <div className='container'>
-            <div className="card2">
+            <div className="CardPokemonDetail">
                 <div className="top-container">
                     <Title children={nom} size="medium"></Title>
                 </div>
@@ -34,4 +34,4 @@ const Card2 = ({
     )
 }
 
-export default Card2;
+export default CardPokemonDetail;

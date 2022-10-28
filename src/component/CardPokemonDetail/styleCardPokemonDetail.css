@@ -1,4 +1,4 @@
-.card2 {
+.CardPokemonDetail {
     background-color: antiquewhite;
     text-align: center;
     min-width: 400px;
@@ -7,8 +7,8 @@
     flex-direction: column;
     border-radius: 1rem;
     border: 1rem solid;
-    border-color: bisque;
-    background-color: rgb(195, 223, 39);
+    border-color: rgb(161, 130, 92);
+    background-color: rgb(161, 143, 119);
 
     min-height: 650px;
     justify-content: space-around;
@@ -45,7 +45,7 @@
 
 
 
-.card2 img {
+.CardPokemonDetail img {
 
     display: flex;
     flex-direction: column;

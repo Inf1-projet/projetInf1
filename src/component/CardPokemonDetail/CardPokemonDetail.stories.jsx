@@ -1,12 +1,12 @@
 import React from "react";
-import Card2 from "./Card2";
+import CardPokemonDetail from "./CardPokemonDetail";
 
 export default {
-    component : Card2,
-    Card2 : 'component/Card2'
+    component : CardPokemonDetail,
+    CardPokemonDetail : 'component/CardPokemonDetail'
 }
 
-const Template = (args) => <Card2 {...args} />
+const Template = (args) => <CardPokemonDetail {...args} />
 
 export  const Default = Template.bind({});
 

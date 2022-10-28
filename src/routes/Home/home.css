@@ -14,7 +14,7 @@ div {
     margin-bottom: 10px;
 }
 
-.div-card1 {
+.div-cardPokemon {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,7 +26,7 @@ div {
     width: 100%;
 }
 
-.card1 {
+.cardPokemon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,7 +34,7 @@ div {
 
 }
 
-.card1:hover {
+.cardPokemon:hover {
 
     box-shadow: 0px 10px 14px -7px #6d6e6b;
     background-color: #8A8479;
