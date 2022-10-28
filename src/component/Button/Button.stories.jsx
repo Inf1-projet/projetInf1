@@ -11,7 +11,7 @@ const Template = (args) => <Button {...args} />
 export  const Default = Template.bind({});
 
 Default.args = {
-    text: 'Button',
+    textButton: 'Button',
     type: "b-p3"
 }
 
